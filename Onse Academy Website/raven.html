@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Dancer Profile | Onse Academy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+/* === BODY BACKGROUND === */
+body {
+ 
+  background-size: cover;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+/* === CONTAINER (same as footer) === */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* === PROFILE SECTION === */
+.profile-section {
+  margin-top: 80px;
+}
+
+/* === COVER PHOTO === */
+.cover-photo {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px; /* space for overlapping profile pic */
+}
+
+.cover-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+  border-radius: 10px;
+}
+
+/* === PROFILE (with overlap effect) === */
+.profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.profile-pic {
+  position: absolute;
+  top: -100px; /* overlap cover photo */
+  left: 30px;
+  width: 180px;
+  height: 180px;
+  border: 4px solid black;
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
+}
+
+.profile-content {
+  margin-top: 70px; /* push text below picture */
+  width: 100%;
+}
+
+.profile-content h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.genre {
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 15px;
+}
+
+.bio {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+/* === SOCIAL LINKS === */
+.socials {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.socials a {
+  width: 35px;
+  height: 35px;
+  background: #1c1f2e;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  background: red;
+  transform: translateY(-3px);
+}
+
+/* === YOUTUBE SECTION === */
+.youtube-section {
+  text-align: center;
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+/* === DESKTOP LAYOUT === */
+@media (min-width: 768px) {
+  .profile {
+    align-items: flex-start; /* left align image & text */
+    text-align: left;
+  }
+
+  .profile-pic {
+    left: 30px;
+  }
+
+  .profile-content {
+    text-align: left;
+    width: 100%;
+  }
+
+  .bio {
+    padding: 0;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+}
+
+/* === TABLET === */
+@media (max-width: 900px) and (min-width: 601px) {
+  iframe { height: 320px; }
+}
+
+/* === MOBILE LAYOUT === */
+@media (max-width: 600px) {
+  .cover-photo {
+    height: 180px;
+    margin-bottom: 0px;
+  }
+
+  .profile {
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-pic {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .profile-content {
+    margin-top: 90px;
+    text-align: center;
+  }
+
+  .bio {
+    padding: 0 15px;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  iframe {
+    height: 250px;
+  }
+
+  /* === Center all footer text on mobile === */
+  #footer {
+    text-align: center;
+  }
+
+  #footer .container,
+  #footer .sitename,
+  #footer p,
+  #footer .copyright,
+  #footer .credits {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #footer .credits a {
+    display: inline-block;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container site-nav__inner">
+    <a href="index.html">
+      <img src="assets/img/logo.png" alt="Onse Academy Logo" style="height:40px; width:auto; object-fit:contain;">
+
+    </a>
+    <button class="nav-toggle">☰</button>
+    <ul class="site-nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- === PROFILE SECTION === -->
+<section id="profile" class="profile-section" data-aos="fade-up">
+  <div class="container">
+
+    <!-- === RAVEN AMEJANA === -->
+    <div class="cover-photo">
+      <img src="assets/img/defbg.jpg" alt="Raven Amejana Cover Photo">
+    </div>
+
+    <div class="profile">
+      <img src="assets/img/rav.png" alt="Raven Amejana" class="profile-pic">
+
+      <div class="profile-content">
+        <h2>Raven Amejana</h2>
+        <p class="genre">Waacking</p>
+        <p class="bio">
+          Raven Amejana is a dynamic waacker known for her expressive arm movements and fierce stage persona. Her choreography tells stories of empowerment and confidence, inspiring dancers to embrace their individuality. Raven represents the elegance and power of Waacking culture.
+        </p>
+
+        <div class="socials">
+          <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- === VIDEO SECTION === -->
+<section id="videos" class="youtube-section" data-aos="zoom-in">
+  <div class="container">
+    <iframe src="https://www.youtube.com/embed/6De87b9AgeY?si=DPR38RZP2vgY3eg" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- === FOOTER === -->
+<footer id="footer" class="footer dark-background" data-aos="fade-up">
+  <div class="container">
+    <h2 class="sitename" data-aos="zoom-in">Onse Academy</h2>
+    <p data-aos="fade-up" data-aos-delay="200">
+      We are a group of individuals put together for one main purpose, to dance for the Glory of God...
+    </p>
+    
+    <div class="container" data-aos="fade-up" data-aos-delay="600">
+      <div class="copyright">
+        <span>Copyright</span>
+        <strong class="px-1 sitename">OPPANG</strong>
+        <span>All Rights Reserved</span>
+      </div>
+      <div class="credits">
+        Designed by
+        <a href="https://www.facebook.com/jamesbernard.gerena">
+          <span style="color: red;">Gerena, James Bernard</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.site-nav__links');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+</body>
+</html>
