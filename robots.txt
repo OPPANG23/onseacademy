@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: /#contact
 Allow: /
 
-Sitemap: https://onseacademy.netlify.app/sitemap.xml
+Sitemap: https://www.onseacademy.com/sitemap.xml
+
