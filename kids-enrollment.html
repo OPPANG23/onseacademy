@@ -76,24 +76,27 @@
       padding: 0 20px;
     }
 
-    .hero-content h1 {
+    .hero-content h1,
+    .hero-content h2 {
       font-family: 'Oswald', sans-serif;
       font-weight: 800;
-      font-size: clamp(3rem, 4vw, 5rem);
-      line-height: 1.02;
-      letter-spacing: 0.08em;
-      margin-bottom: 1rem;
+      /* increased size by approx 10% */
+      font-size: clamp(2rem, 3.2vw, 3.17rem) !important;
+      line-height: 1.06;
+      letter-spacing: 0.054em;
+      margin-bottom: 0.72rem;
       text-transform: uppercase;
-      text-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+      text-shadow: 0 12px 27px rgba(0, 0, 0, 0.32);
     }
 
     .hero-content .lead {
       font-family: 'Quicksand', sans-serif;
-      font-size: 1.15rem;
-      max-width: 830px;
+      /* increased size by approx 10% */
+      font-size: 0.95rem !important;
+      max-width: 752px;
       margin: 0 auto;
       color: var(--default-color);
-      line-height: 1.8;
+      line-height: 1.58;
     }
 
     .hero-buttons {
@@ -108,14 +111,16 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 24px;
+      /* increased size by approx 10% */
+      padding: 10px 20px !important;
       border-radius: 999px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      font-size: 0.95rem !important;
+      letter-spacing: 0.072em;
       text-transform: uppercase;
       transition: transform 0.25s ease, opacity 0.25s ease, background-color 0.25s ease;
       border: 1px solid transparent;
-      min-width: 170px;
+      min-width: 140px !important;
     }
 
     .btn-hero.btn-primary {
@@ -137,8 +142,9 @@
     }
 
     .section-title {
-      font-size: clamp(2rem, 3vw, 2.6rem);
-      margin-bottom: 1.8rem;
+      /* increased size by approx 10% */
+      font-size: clamp(1.38rem, 2.2vw, 1.76rem) !important;
+      margin-bottom: 1.39rem !important;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
@@ -381,8 +387,10 @@
       .hero {
         padding-top: 100px;
       }
-      .hero-content h1 {
-        font-size: 2.6rem;
+      .hero-content h1,
+      .hero-content h2 {
+        /* mobile headline increased by approx 10% */
+        font-size: 2.4rem !important;
       }
       .hero-buttons {
         justify-content: center;
@@ -420,7 +428,6 @@
       <p class="lead">A fun and beginner-friendly dance program designed to help children build confidence, rhythm, coordination, and strong hip-hop fundamentals.</p>
       <div class="hero-buttons">
         <a href="https://forms.gle/7PVudwQNxfoGXdqm6" class="btn-hero btn-primary">Enroll Now</a>
-        <a href="#program" class="btn-hero btn-outline">View Classes</a>
       </div>
     </div>
   </section>
