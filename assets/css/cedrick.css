@@ -1,0 +1,109 @@
+/* Styles for Cedrick Moro profile page */
+
+@font-face {
+  font-family: 'Akira';
+  src: url('../font/akira-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Funky';
+  src: url('../font/funky.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Akira', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #222;
+}
+
+/* Profile section */
+.profile {
+  padding: 60px 15px;
+  background: #f9f9f9; /* light background */
+  text-align: center;
+}
+
+.profile h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.profile p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.profile img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 50%;
+  border: 5px solid #eee;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.profile .social-links {
+  margin: 20px 0;
+}
+
+.profile .social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1.8rem;
+  color: #333;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.profile .social-links a:hover {
+  color: #007bff; /* bootstrap primary */
+}
+
+.profile .video {
+  margin-top: 40px;
+}
+
+.profile .video iframe {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+/* Optional: footer for Cedrick page */
+.footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px 15px;
+}
+
+.footer h3 {
+  font-family: 'Funky', cursive;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer .social-links {
+  margin-top: 10px;
+}
+
+.footer .social-links a {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  color: #007bff;
+}
