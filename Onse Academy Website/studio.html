@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Dojo Dance Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link href="assets/css/main.css" rel="stylesheet">
+  
+  <!-- Favicons -->
+  <link href="assets/img/dojo.png" rel="icon">
+  <link href="assets/img/dojo.png" rel="apple-touch-icon">
+  <style>
+  /* ---------- BASE ---------- */
+* { box-sizing: border-box; }
+
+.section {
+  padding-top: 120px;
+}
+
+.section {
+  padding-right: 0px;
+  padding-left: 0px;
+   padding-bottom: 0px;
+}
+
+/* Grid container for studio */
+.studio-grid {
+  display: grid;
+  gap: 6px;
+}
+
+/* Banner */
+.studio-banner {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+.studio-banner img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 3 images */
+.studio-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+.studio-images img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- CONTACT / BOOKING ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 1.25rem;
+}
+form {
+  display: grid;
+  gap: .8rem;
+}
+input,
+textarea,
+select {
+  background: #0f1220;
+  border: 1px solid #242a3b;
+  padding: .8rem;
+  color: var(--text);
+}
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .8rem;
+}
+.socials {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+.map {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+}
+
+/* ---------- NAV ---------- */
+.site-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #242a3b;
+}
+.site-nav__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75rem 1rem;
+}
+.site-nav__links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+.site-nav__links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.site-nav__links li a:hover { color: #f33; }
+.nav-toggle { display: none; font-size: 1.5rem; background: none; border: none; color: white; cursor: pointer; }
+
+/* ---------- MEDIA QUERIES / MOBILE FIXES ---------- */
+
+/* Soft breakpoint for tablets */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile breakpoint: force vertical stacking and override conflicts if any */
+@media screen and (max-width: 768px) {
+
+  /* Make sure media queries actually fire - if they don't, make sure the viewport meta is added */
+  .studio-grid {
+    /* Force stacking even if another stylesheet tries to make it grid */
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 1rem !important;
+  }
+
+  .studio-banner,
+  .studio-images {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .studio-images {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+  }
+
+  .studio-images img {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: .8rem !important;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Contact: form first, map below — full width */
+  .contact-grid {
+    display: block !important;
+    grid-template-columns: none !important;
+  }
+  .contact-grid > div {
+    width: 100% !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .contact-grid .map {
+    min-height: 250px !important;
+  }
+
+  /* Nav */
+  .nav-toggle { display: block !important; }
+  .site-nav__links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    
+    padding: 1rem;
+    gap: 1rem;
+    display: none;
+  }
+  .site-nav__links.active { display: flex !important; }
+}
+
+/* Extra small phones */
+@media (max-width: 500px) {
+  .section { padding-top: 80px; }
+  .studio-images img { height: 200px; }
+}
+
+
+@media (max-width: 768px) {
+  .section-head {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    align-items: flex-start; /* align left */
+    text-align: left; /* make sure text flows left */
+  }
+
+  .section-head h2 {
+    margin-bottom: 0.5rem; /* space under heading */
+  }
+
+  .section-head p {
+    margin-top: 0; /* remove extra space */
+  }
+  
+  .container, .containerr {
+        padding: 0 16px !important;
+   
+        max-width: 100% !important;
+    }
+}
+
+.footer .sitename {
+    margin-top: 60px !important;
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .copyright, 
+  .credits {
+    font-size: 13px; /* smaller on mobile */
+    line-height: 1.4; /* better readability */
+	text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container site-nav__inner">
+    <div class="site-nav__brand">
+      <a href="index.html">
+        <img src="assets/img/dojo.png" alt="Onse Academy Logo" style="height:40px;">
+      </a>
+    </div>
+
+    <!-- Hamburger button -->
+    <button class="nav-toggle" aria-label="Toggle menu">
+      ☰
+    </button>
+
+    <ul class="site-nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<section class="section" data-aos="fade-up">
+  <div class="container">
+    <h2 class="section-title">Dojo Dance Studio</h2>
+    <p>Located in San Jose Del Monte, Bulacan — Uniting all individuals To inspire more lives through DANCE. Join us in exploring the art of dance and community.</p>
+    <p>
+      Follow us on Facebook: 
+      <a href="https://www.facebook.com/thedojodancestudio" target="_blank" style="color:red; font-weight:600;">
+        The Dojo Dance Studio
+      </a>
+    </p>
+
+    <div class="studio-grid">
+      <!-- Full width top image -->
+      <div class="studio-banner">
+        <img src="assets/img/s1.jpg" alt="Dojo Dance Studio Banner">
+      </div>
+
+      <!-- 3 Images -->
+      <div class="studio-images">
+        <img src="assets/img/s2.jpg" alt="Studio View 1">
+        <img src="assets/img/s4.jpg" alt="Studio View 2">
+        <img src="assets/img/s3.jpg" alt="Studio View 3">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+ <!-- Contact / Booking -->
+  <section id="contact" class="container">
+  <div class="section-head" data-aos="fade-up" data-aos-duration="1000">
+    <h2>Booking & Contact</h2>
+    <p>Looking to book a performance, workshop, or collaboration? Send us the details and we’ll respond fast.</p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- Contact Form -->
+    <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+      <form action="mailto:inggo.zero@gmail.com" method="post" enctype="text/plain">
+        <input class="input" type="text" name="name" placeholder="Your name" required />
+        <input class="input" type="email" name="email" placeholder="Your Email" required />
+        <textarea class="textarea" name="message" placeholder="Your Message" required></textarea>
+        <button class="button" type="submit">Send</button>
+      </form>
+    </div>
+
+    <!-- Map -->
+    <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+      <iframe class="map" loading="lazy" allowfullscreen
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6487.741034212576!2d121.06893094441781!3d14.789639482180048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397af92bac93ccb%3A0x9282b31ae1c1ff4b!2sDojo%20Dance%20Studio!5e0!3m2!1sen!2sph!4v1758630131574!5m2!1sen!2sph">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+
+<footer id="footer" class="footer dark-background" data-aos="fade-up">
+  <div class="container">
+    <h2 class="sitename" data-aos="zoom-in">Onse Academy</h2>
+    <p data-aos="fade-up" data-aos-delay="200">We are a group of individuals put together for one main purpose, to dance for the Glory of God...</p>
+    
+    <div class="container" data-aos="fade-up" data-aos-delay="600">
+      <div class="copyright">
+        <span>Copyright</span> <strong class="px-1 sitename">OPPANG</strong> <span>All Rights Reserved</span>
+      </div>
+     <div class="credits">
+  Designed by <a href="https://www.facebook.com/jamesbernard.gerena"> <span style="color: red;">Gerena, James Bernard</span></a>
+</div>
+
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false
+  });
+</script>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.site-nav__links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+<script>
+  if (window.innerWidth > 768) { // Only enable AOS for tablets and desktops
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+  } else {
+    // Disable AOS on mobile
+    document.querySelectorAll('[data-aos]').forEach(el => {
+      el.removeAttribute('data-aos');
+      el.removeAttribute('data-aos-delay');
+      el.removeAttribute('data-aos-duration');
+    });
+  }
+</script>
+
+<!-- Floating Facebook Messenger Chat -->
+<div id="fb-messenger-floater">
+  <a id="messenger-link" href="https://www.facebook.com/messages/t/thedojodancestudio" target="_blank" aria-label="Chat with us on Messenger">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/messenger.svg" alt="Messenger" />
+  </a>
+</div>
+
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+<div id="fb-customer-chat" class="fb-customerchat"></div>
+
+<script>
+  // Set your Facebook Page ID
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "thedojodancestudio");
+  chatbox.setAttribute("attribution", "biz_inbox");
+
+  // Load the Facebook SDK
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml: true,
+      version: 'v19.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Detect mobile and update Messenger link dynamically
+  document.addEventListener("DOMContentLoaded", function() {
+    const messengerLink = document.getElementById("messenger-link");
+    const pageName = "thedojodancestudio"; // your page username
+
+    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      messengerLink.href = "https://m.me/" + pageName;
+    } else {
+      messengerLink.href = "https://www.facebook.com/messages/t/" + pageName;
+    }
+  });
+</script>
+
+
+
+
+</body>
+</html>
