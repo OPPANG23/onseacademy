@@ -4,8 +4,6 @@
   const mobileMenu = document.querySelector('.mobile-menu');
   const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
   const toast = document.getElementById('toast');
-  const form = document.getElementById('contact-form-element');
-  const formNote = document.getElementById('form-note');
 
   const setHeader = () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
@@ -47,12 +45,6 @@
     });
   });
 
-  form?.addEventListener('submit', e => {
-    e.preventDefault();
-    form.reset();
-    formNote.textContent = 'Inquiry captured locally. Connect this form to your preferred email or form service before launch.';
-    showToast('Thanks — your inquiry form is ready to be connected.');
-  });
 
   function showToast(message) {
     if (!toast) return;
